@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta teg -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <!-- <link rel="stylesheet" href="css/index.css" /> -->
+    <link rel="stylesheet" href="{% static 'css/index.css'%}" />
+
+    <title>Todo List</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="header__title">Todo List</h1>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="input-container">
+          <form class="form-task">
+            <input
+              type="text"
+              id="newTaskName"
+              name="taskName"
+              placeholder="Напишите новую задачу"
+              class="input input-create"
+            />
+            <button type="button" id="addNewTask" class="input input-btn">
+              Add Item
+            </button>
+          </form>
+        </div>
+        <div class="todo-container">
+          <ul class="todo-list">
+            <li class="todo-item">
+              <div class="todo-item__header">
+                <p>
+                  <label>
+                    <input type="checkbox" />
+                    Create React component
+                  </label>
+                </p>
+              </div>
+              <div class="todo-list__footer">
+                <div class="todo-time">Time</div>
+                <div class="important">
+                  <input type="checkbox" />
+                </div>
+                <div class="trash">Delete</div>
+              </div>
+            </li>
+            <li class="todo-item mark">
+              <div class="todo-item__header">
+                <p>
+                  <label>
+                    <input type="checkbox" />
+                    Fetch DATA
+                  </label>
+                </p>
+              </div>
+              <div class="todo-list__footer">
+                <div class="todo-time">Time</div>
+                <div class="important">
+                  <input type="checkbox" checked />
+                </div>
+                <div class="trash">Delete</div>
+              </div>
+            </li>
+            <li class="todo-item done">
+              <div class="todo-item__header">
+                <p>
+                  <label>
+                    <input type="checkbox" checked />
+                    make new App
+                  </label>
+                </p>
+              </div>
+              <div class="todo-list__footer">
+                <div class="todo-time">Time</div>
+                <div class="important">
+                  <input type="checkbox" />
+                </div>
+                <div class="trash">Delete</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
