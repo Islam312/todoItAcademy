@@ -1,11 +1,58 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h2>это тестовая страница</h2>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/index.css'%}" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+        <h1 class="header__title">Todo List</h1>
+    </header>
+    <main>
+      <div class="container">
+        <div class="input-container">
+          <form class="form-task">
+            <input
+              type="text"
+              id="newTaskName"
+              name="taskName"
+              placeholder="Напишите новую задачу"
+              class="input input-create"
+            />
+            <button type="button" id="addNewTask" class="input input-btn">
+              Add Item
+            </button>
+          </form>
+        </div>
+        <div class="todo-container">
+
+        <ul class="todo-list">
+          {% for todo in todo_list %}
+          <li class="todo-item">
+            <div class="todo-item__header">
+              <p>
+                <label>
+                  <input type="checkbox" />
+                  {{todo.describe_text}}
+                </label>
+              </p>
+            </div>
+            <div class="todo-list__footer">
+              <div class="todo-time">Time</div>
+              <div class="important">
+                <input type="checkbox" />
+              </div>
+              <div class="trash">Delete</div>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
