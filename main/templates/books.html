@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <title>Books</title>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div class="container">
+          <div class="header-wrap">
+            <div class="logo">
+              <a href="#">LOGOTYPE</a>
+            </div>
+            <nav>
+              <ul class="list-sections">
+                <li>
+                  <a href="#" class="item-section"> Главная </a>
+                </li>
+                <li>
+                  <a href="#" class="item-section"> Каталог книг </a>
+                </li>
+                <li>
+                  <a href="#" class="item-section"> Сервис </a>
+                </li>
+                <li>
+                  <a href="#" class="item-section"> О нас </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="wrapper">
+          {% for book in books_list%}
+          <div class="book-card">
+            <img src="#" class="book-img" />
+            <div class="book-text">
+              <div class="title">Название: {{book.title}}</div>
+              <div class="author">Автор: {{book.author}}</div>
+              <div class="release-date">Дата издания: {{book.year}}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
