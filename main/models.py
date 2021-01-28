@@ -9,6 +9,7 @@ class ToDo(models.Model):
   is_done = models.BooleanField(default=False)
   is_important = models.BooleanField(default=False)
 
+
 class Books(models.Model):
   title = models.CharField(max_length=50)
   subtitle = models.CharField(max_length=50)

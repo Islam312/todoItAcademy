@@ -34,19 +34,18 @@
             <li class="todo-item">
               <div class="todo-item__header">
                 <p>
-                  <label>
-                    <input type="checkbox" />
+                  <label class="wrap-checkbox">
                     {{todo.describe_text}}
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
                   </label>
                 </p>
               </div>
               <div class="todo-list__footer">
-                <div class="todo-time">Time</div>
-                <div class="important">
-                  <input type="checkbox" />
-                </div>
-                <div class="trash">Delete</div>
-              </div>
+                <div class="todo-time">{{todo.time_create}}</div>
+                <img src="{% static 'icons/unmarked.png'%}" class="important">
+                <img src="{% static 'icons/trash.png' %}" class="trash">
+              </img>
             </li>
             {% endfor %}
           </ul>
