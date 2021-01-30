@@ -15,11 +15,12 @@
     <main>
       <div class="container">
         <div class="input-container">
-          <form class="form-task">
+          <form class="form-task" action="{% url 'add-task' %}" method="POST">
+            {% csrf_token %}
             <input
               type="text"
               id="newTaskName"
-              name="taskName"
+              name="create_task"
               placeholder="Напишите новую задачу"
               class="input input-create"
             />

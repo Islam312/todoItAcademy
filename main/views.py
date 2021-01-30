@@ -13,3 +13,5 @@ def books(request):
   books_list = Books.objects.all()
   return render(request, 'books.html', {'books_list': books_list})
 
+def add_task(request):
+  return render()
