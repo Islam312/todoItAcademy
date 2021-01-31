@@ -15,7 +15,7 @@
     <main>
       <div class="container">
         <div class="input-container">
-          <form class="form-task" action="{% url 'add-task' %}" method="POST">
+          <form action="{% url 'add-task' %}" class="form-task"  method="POST">
             {% csrf_token %}
             <input
               type="text"
@@ -24,7 +24,7 @@
               placeholder="Напишите новую задачу"
               class="input input-create"
             />
-            <button type="button" id="addNewTask" class="input input-btn">
+            <button class="input input-btn">
               Add Item
             </button>
           </form>

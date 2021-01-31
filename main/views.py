@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from .models import ToDo, Books
 # Create your views here.
 def homepage(request):
@@ -14,4 +14,8 @@ def books(request):
   return render(request, 'books.html', {'books_list': books_list})
 
 def add_task(request):
-  return render()
+  getForm = request.POST
+  text = getForm["create_task"]
+  todoList = ToDo(describe_text = text)
+  todoList.save()
+  return redirect(homepage)
