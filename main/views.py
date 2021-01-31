@@ -19,3 +19,23 @@ def add_task(request):
   todoList = ToDo(describe_text = text)
   todoList.save()
   return redirect(homepage)
+
+def add_book(request):
+  getForm = request.POST
+  title = getForm["title"]
+  subtitle = getForm["subtitle"]
+  description = getForm["description"]
+  price = getForm["price"]
+  genre = getForm["genre"]
+  author = getForm["author"]
+  year = getForm["year"]
+  bookList = Books(
+    title = title,
+    subtitle = subtitle,
+    description = description,
+    price = price,
+    genre = genre,
+    author = author,
+    year = year)
+  bookList.save()
+  return redirect(books)
